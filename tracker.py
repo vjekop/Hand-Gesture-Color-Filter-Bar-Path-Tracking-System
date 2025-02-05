@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import time
 import math
-# Provide the correct path to your video
+
 video_path = r"C:\Users\sydne\OneDrive\Desktop\Olympic weightlifting tracker\liftvideo.mp4"
 
 
@@ -68,7 +68,7 @@ while True:
 
         if good_new.shape[0] > 0:
             # coordinates of the first point
-            new = good_new[0].ravel()  # Coordinates of the new point
+            new = good_new[0].ravel()  # coordinates of the new point
             new_point = (int(new[0]), int(new[1]))  
 
             path_points.append(new_point)
@@ -85,7 +85,7 @@ while True:
         delay = max(1, int(1000 / fps - elapsed_time * 1000))  # Delay based on FPS
         start_time = time.time()
 
-        if cv2.waitKey(delay) & 0xFF == ord('q'):  # Exit condition when 'q' is pressed
+        if cv2.waitKey(delay) & 0xFF == ord('q'):  
             print("Exiting...")
             break
 
